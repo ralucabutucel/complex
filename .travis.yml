@@ -21,3 +21,16 @@ after_success:
   - docker push ralucab/multi-nginx
   - docker push ralucab/multi-server
   - docker push ralucab/multi-worker
+
+  deploy:
+    provider: elasticbeanstalk
+    region: us-east-2
+    app: complex
+    env: Complex-env
+    bucket_name: elasticbeanstalk-us-east-2-243348670467
+    bucket_path: complex
+    on:
+      branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_key_id:
+      secure: $AWS_SECRET_KEY  
