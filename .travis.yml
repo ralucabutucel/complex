@@ -22,7 +22,7 @@ after_success:
   - docker push ralucab/multi-server
   - docker push ralucab/multi-worker
 
-  deploy:
+deploy:
     provider: elasticbeanstalk
     region: us-east-2
     app: complex
